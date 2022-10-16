@@ -1,0 +1,11 @@
+venv/
+.idea/
+.vscode/
+.env
+*.pyc
+*/migrations/*.py
+!*/migrations/__init__.py
+uploads/users/images/*
+media/uploads/users/images/*
+media/uploads/vendor/*
+media/uploads/guestlanding/*

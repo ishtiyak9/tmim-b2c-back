@@ -1,0 +1,2144 @@
+{
+	"info": {
+		"_postman_id": "684aa865-f1fe-45d4-88c0-fcaf0fb3d0fc",
+		"name": "Tmmim",
+		"description": "Tmmim APIs",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authorization",
+			"item": [
+				{
+					"name": "Customer Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"Haris\",\r\n    \"last_name\": \"Dipto\",\r\n    \"email\": \"haris1@g.com\",\r\n    \"password\": \"12345678\",\r\n    \"city\": \"1\",\r\n    \"wedding_date\": \"2021-12-21\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/customer/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customer",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Account Activation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/activate/Mg/ah31ol-08fdae37e376be5a0207fb697305daef",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"activate",
+								"Mg",
+								"ah31ol-08fdae37e376be5a0207fb697305daef"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"haris@g.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\": \"haris\",\r\n    \"last_name\": \"dipto\",\r\n    \"company\": \"Bogus Company LTD\",\r\n    \"business_category\": \"1\",\r\n    \"phone\": \"01010101\",\r\n    \"email\": \"dipto@g.com\",\r\n    \"password\": \"12345678\",\r\n    \"country\": \"1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/vendor/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendor",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"dipto@g.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxNywidXNlcm5hbWUiOiJoYXJpc2guZGlwdG9AZ21haWwuY29tIiwiZXhwIjoxNjExMjEyNjg4LCJlbWFpbCI6ImhhcmlzaC5kaXB0b0BnbWFpbC5jb20ifQ.kbxE9TRcI-bjAkI2-HSCBmBXxoYCXIq0X3h5d5r8x7s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_password\": \"123456789_\",\r\n    \"new_password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/password/change",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"password",
+								"change"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Forget Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"harish.dipto@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/password/reset/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"password",
+								"reset",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Reset Password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"token\": \"f25e18170f234311e1cf46d16ecb282570c90da7036d\",\r\n    \"password\": \"123456789_\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/password/reset/confirm/?token=f25e18170f234311e1cf46d16ecb282570c90da7036d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"password",
+								"reset",
+								"confirm",
+								""
+							],
+							"query": [
+								{
+									"key": "token",
+									"value": "f25e18170f234311e1cf46d16ecb282570c90da7036d"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Customer Account Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImhhcmlzQGcuY29tIiwiZXhwIjoxNjEyOTYwNDE0LCJlbWFpbCI6ImhhcmlzQGcuY29tIn0.DdRNMF7A8MtyOqgL3pujL42kDCwNGl2sBj-s6BaE_f0",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/customer/account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customer",
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Account Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJ1c2VybmFtZSI6ImhhcmlzQGdhbWlsLmNvbSIsImV4cCI6MTYxMTgzMDEwMCwiZW1haWwiOiJoYXJpc0BnYW1pbC5jb20ifQ.2JBY9Rm1RTer6MTCyTrJpqw12xr5EFQ5JyrmBczMtgE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Harisss",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Dipto",
+									"type": "text"
+								},
+								{
+									"key": "planning_type",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "010101",
+									"type": "text"
+								},
+								{
+									"key": "about_me",
+									"value": "wanna marrid soon!",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/Photos/Coffee/becca-tapert-vzU4qT_jhEQ-unsplash.jpg",
+									"disabled": true
+								},
+								{
+									"key": "city",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "wedding_date",
+									"value": "2020-12-01",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "1997-08-02",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "M",
+									"type": "text"
+								},
+								{
+									"key": "zip_code",
+									"value": "1000",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/customer/account/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customer",
+								"account",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor Account Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjE0MjM1NDg1LCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.KLr6AyOlh1rUCXHK5t84EEF3uV2M-OVdygyMpnYwDhQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/vendor/account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendor",
+								"account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor Account Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjExODMwMTc1LCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.YZF-eFtsejenVzVvZazWEtjcFIUyfmb50rxbtCowtuY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Haris",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Pasha",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "015",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/Photos/Coffee/harry-brewer-irDJy_7lkWk-unsplash.jpg"
+								},
+								{
+									"key": "address",
+									"value": "dhaka...",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "dob",
+									"value": "1997-08-02",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "M",
+									"type": "text"
+								},
+								{
+									"key": "zip_code",
+									"value": "1000",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/vendor/account/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendor",
+								"account",
+								"update"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Vendor Profile",
+			"item": [
+				{
+					"name": "Business Category List",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"businesscategory\": \"Travel Agents 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/businesscategorylist",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"businesscategorylist"
+							]
+						},
+						"description": "http://localhost:8000/api/businesscategorylist"
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor Profile Details",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/vendor/profile/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendor",
+								"profile",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor Profile Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjExOTM1OTAwLCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.iKVB2jyszlXBF4_4z242Dfwgt5G__pA8H0cpxVRJj3Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "company",
+									"value": "Super Bogus Company LTD",
+									"type": "text"
+								},
+								{
+									"key": "business_category",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "al2 fal2 description",
+									"type": "text"
+								},
+								{
+									"key": "vendor",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "city",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "zip_code",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "unknown",
+									"type": "text"
+								},
+								{
+									"key": "commission",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "cover_photo",
+									"type": "file",
+									"src": "/D:/Photos/Coffee/becca-tapert-vzU4qT_jhEQ-unsplash.jpg"
+								},
+								{
+									"key": "discount_status",
+									"value": "true",
+									"type": "text"
+								},
+								{
+									"key": "discount_amount",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "attachments[0]path",
+									"type": "file",
+									"src": "/D:/Photos/Coffee/clem-onojeghuo-9AEh9i-WPhI-unsplash.jpg"
+								},
+								{
+									"key": "attachments[1]path",
+									"type": "file",
+									"src": "/D:/Photos/Coffee/harry-brewer-irDJy_7lkWk-unsplash.jpg"
+								},
+								{
+									"key": "attachments[2]path",
+									"type": "file",
+									"src": "/D:/Photos/Coffee/david-mao-m0l5J8Lqnzo-unsplash.jpg",
+									"disabled": true
+								},
+								{
+									"key": "services[0]name",
+									"value": "service 1",
+									"type": "text"
+								},
+								{
+									"key": "services[1]name",
+									"value": "service 2",
+									"type": "text"
+								},
+								{
+									"key": "facilities[0]name",
+									"value": "facility #1",
+									"type": "text"
+								},
+								{
+									"key": "facilities[1]name",
+									"value": "facility 2",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/vendor/profile/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendor",
+								"profile",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Filter Profile",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/vendor/filter?business_category=1&date=2021-12-21&start_time=10:00&end_time=13:00",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendor",
+								"filter"
+							],
+							"query": [
+								{
+									"key": "business_category",
+									"value": "1"
+								},
+								{
+									"key": "city",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "discount_status",
+									"value": "true",
+									"disabled": true
+								},
+								{
+									"key": "date",
+									"value": "2021-12-21"
+								},
+								{
+									"key": "start_time",
+									"value": "10:00"
+								},
+								{
+									"key": "end_time",
+									"value": "13:00"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Subscription",
+			"item": [
+				{
+					"name": "Subscription Plan",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjEyMzI1OTU1LCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.UYC_BAR38mdJ82alrrbIJVTURzOQ0Cc2PuFCb5X7rXM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/subscription/plans",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"subscription",
+								"plans"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscribe",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjEyMzI1OTU1LCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.UYC_BAR38mdJ82alrrbIJVTURzOQ0Cc2PuFCb5X7rXM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"subscription_plan\": \"2\",\r\n    \"fees\": \"20000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/subscribe",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"subscribe"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Subscription History",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjEyMzI1OTU1LCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.UYC_BAR38mdJ82alrrbIJVTURzOQ0Cc2PuFCb5X7rXM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/subscription/history",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"subscription",
+								"history"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Cancel Subscription",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjEyMzI1OTU1LCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.UYC_BAR38mdJ82alrrbIJVTURzOQ0Cc2PuFCb5X7rXM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/subscription/cancel/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"subscription",
+								"cancel",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Guest",
+			"item": [
+				{
+					"name": "View Guest List",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJ1c2VybmFtZSI6ImhhcmlzQGdhbWlsLmNvbSIsImV4cCI6MTYxMjI0MTk4MSwiZW1haWwiOiJoYXJpc0BnYW1pbC5jb20ifQ.Wv8XhVJpGGtM2Jzr_cxdtTsfwtap8JuvlgzLBFD9cQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/guest/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"guest",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guest Add",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJ1c2VybmFtZSI6ImhhcmlzQGdhbWlsLmNvbSIsImV4cCI6MTYxMjI0MTk4MSwiZW1haWwiOiJoYXJpc0BnYW1pbC5jb20ifQ.Wv8XhVJpGGtM2Jzr_cxdtTsfwtap8JuvlgzLBFD9cQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"relationship\": \"brother\",\r\n    \"name\": \"omar shahid :D\",\r\n    \"email\": \"omar.shahid2@g.com\",\r\n    \"phone\": \"01523244312\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/guest/add",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"guest",
+								"add"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Guest",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJ1c2VybmFtZSI6ImhhcmlzQGdhbWlsLmNvbSIsImV4cCI6MTYxMjI0MTk4MSwiZW1haWwiOiJoYXJpc0BnYW1pbC5jb20ifQ.Wv8XhVJpGGtM2Jzr_cxdtTsfwtap8JuvlgzLBFD9cQo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"relationship\": \"father\",\r\n    \"name\": \"abdul karim\",\r\n    \"email\": \"abdul.karim@g.com\",\r\n    \"phone\": \"01523244312\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/guest/update/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"guest",
+								"update",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guest Delete",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImhhcmlzQGdtYWlsLmNvbSIsImV4cCI6MTYxMTY0NjY0NCwiZW1haWwiOiJoYXJpc0BnbWFpbC5jb20ifQ.iRQxYUJ4ee8lIksLFF8dRWwwTRT4hPdvZh_dytZwI2U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/guest/delete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"guest",
+								"delete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Guest Landing Page",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/guest/landingpage/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"guest",
+								"landingpage",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Guest Landing Page",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImhhcmlzQGcuY29tIiwiZXhwIjoxNjEyODY0MzA2LCJlbWFpbCI6ImhhcmlzQGcuY29tIn0.srS0JFilH1uZM1C-JXl5AFiwDYHjNVzm3T_UcqLW0Do",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/Photos/Coffee/ali-yahya-LuH_2QlfJ5s-unsplash.jpg"
+								},
+								{
+									"key": "details",
+									"value": "an awesome wedding!",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "somewhere...",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2021-06-21 12:01",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/guest/landingpage/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"guest",
+								"landingpage",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Guest Landing Page",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImhhcmlzQGcuY29tIiwiZXhwIjoxNjEyODY0MzA2LCJlbWFpbCI6ImhhcmlzQGcuY29tIn0.srS0JFilH1uZM1C-JXl5AFiwDYHjNVzm3T_UcqLW0Do",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/D:/Photos/Coffee/annie-spratt-dqpEg5lo9P0-unsplash.jpg"
+								},
+								{
+									"key": "details",
+									"value": "huuuh....hu... gonna get married",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "dhaka",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2021-06-21 12:01",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/guest/landingpage/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"guest",
+								"landingpage",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasklist",
+			"item": [
+				{
+					"name": "Add Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjEyMzI1OTU1LCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.UYC_BAR38mdJ82alrrbIJVTURzOQ0Cc2PuFCb5X7rXM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"do something else\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/checklist/taskadd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"checklist",
+								"taskadd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All Tasks",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjEyMzI1OTU1LCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.UYC_BAR38mdJ82alrrbIJVTURzOQ0Cc2PuFCb5X7rXM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/checklist/taskall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"checklist",
+								"taskall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjEyMzI1OTU1LCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.UYC_BAR38mdJ82alrrbIJVTURzOQ0Cc2PuFCb5X7rXM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"do something else more..\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/checklist/taskupdate/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"checklist",
+								"taskupdate",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Task",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjEyMzI1OTU1LCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.UYC_BAR38mdJ82alrrbIJVTURzOQ0Cc2PuFCb5X7rXM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/checklist/taskdelete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"checklist",
+								"taskdelete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Checklist",
+			"item": [
+				{
+					"name": "All Checklist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJ1c2VybmFtZSI6ImhhcmlzQGdhbWlsLmNvbSIsImV4cCI6MTYxMjMzOTUxMSwiZW1haWwiOiJoYXJpc0BnYW1pbC5jb20ifQ.jn9ezyAI2-iBfiMZLBEAh5eP_4wkNMN3utqPgWL7VJk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/checklist/checkall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"checklist",
+								"checkall"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Checklist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJ1c2VybmFtZSI6ImhhcmlzQGdhbWlsLmNvbSIsImV4cCI6MTYxMjMzOTUxMSwiZW1haWwiOiJoYXJpc0BnYW1pbC5jb20ifQ.jn9ezyAI2-iBfiMZLBEAh5eP_4wkNMN3utqPgWL7VJk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"check 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/checklist/checkadd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"checklist",
+								"checkadd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Checklist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJ1c2VybmFtZSI6ImhhcmlzQGdhbWlsLmNvbSIsImV4cCI6MTYxMjMzOTUxMSwiZW1haWwiOiJoYXJpc0BnYW1pbC5jb20ifQ.jn9ezyAI2-iBfiMZLBEAh5eP_4wkNMN3utqPgWL7VJk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"check 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/checklist/checkupdate/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"checklist",
+								"checkupdate",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Checklist",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJ1c2VybmFtZSI6ImhhcmlzQGdhbWlsLmNvbSIsImV4cCI6MTYxMjMzOTUxMSwiZW1haWwiOiJoYXJpc0BnYW1pbC5jb20ifQ.jn9ezyAI2-iBfiMZLBEAh5eP_4wkNMN3utqPgWL7VJk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/checklist/checkdelete/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"checklist",
+								"checkdelete",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "RFQ",
+			"item": [
+				{
+					"name": "Create RFQ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImhhcmlzQGcuY29tIiwiZXhwIjoxNjE0MTQ1NzU4LCJlbWFpbCI6ImhhcmlzQGcuY29tIn0.uuAoC0AfyZ3zBgs6nN0fhgW2spp0h9gGZgUQj8pH4ko",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"haris dipto\",\r\n    \"email\": \"haris@g.com\",\r\n    \"date\": \"2021-04-20\",\r\n    \"start_time\": \"10:35\",\r\n    \"end_time\": \"12:40\",\r\n    \"description\": \"something about a quote\",\r\n    \"preferred_contact\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/rfq/create/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"rfq",
+								"create",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "All RFQ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjEzMTA3NTI5LCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.1iEoMscyLPClubdEVRMpp9-6svxY3Zns4YvCbgzMmGg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/rfq/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"rfq",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "RFQ Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImhhcmlzQGcuY29tIiwiZXhwIjoxNjE0MDYwNjM0LCJlbWFpbCI6ImhhcmlzQGcuY29tIn0.ESdUhb8QzBEABfZO2SFKByAswv1tyeVhQ6gpXla-ZEU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/rfq/details/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"rfq",
+								"details",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor Respond RFQ",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjE0MDYwODUxLCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.SGzZnDGn2nH3Deul4wOiwapkjZIbgVH57LOCI5nS7lc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/rfq/response/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"rfq",
+								"response",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Quotation",
+			"item": [
+				{
+					"name": "Create Quotation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjE0MDczOTg5LCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.pojdyWE4X1MzfCY6Z0UUGAD8R-hF0jwaVoKd8NHRi-s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "price",
+									"value": "120",
+									"type": "text"
+								},
+								{
+									"key": "date",
+									"value": "2021-04-21",
+									"type": "text"
+								},
+								{
+									"key": "start_time",
+									"value": "12:20",
+									"type": "text"
+								},
+								{
+									"key": "end_time",
+									"value": "16:00",
+									"type": "text"
+								},
+								{
+									"key": "message",
+									"value": "I need this time",
+									"type": "text"
+								},
+								{
+									"key": "attachment",
+									"type": "file",
+									"src": "/C:/Users/Bmorn 7/Downloads/EWN1250 BTS Tmmim V5.3_fresh.pdf"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/quotation/create/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quotation",
+								"create",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Quotation Details",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImhhcmlzQGcuY29tIiwiZXhwIjoxNjE0MTQ1NzU4LCJlbWFpbCI6ImhhcmlzQGcuY29tIn0.uuAoC0AfyZ3zBgs6nN0fhgW2spp0h9gGZgUQj8pH4ko",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/quotation/details/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quotation",
+								"details",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer Update Quotation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImhhcmlzQGcuY29tIiwiZXhwIjoxNjE0MTQ1NzU4LCJlbWFpbCI6ImhhcmlzQGcuY29tIn0.uuAoC0AfyZ3zBgs6nN0fhgW2spp0h9gGZgUQj8pH4ko",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"4\",\r\n    \"message\": \"price is too heavy\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/quotation/update/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quotation",
+								"update",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor Update Quotation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjE0MTQ1MDAyLCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.UB_9koft7ZZnuLVSpK66XvmznjptTtM4iOnYRSuSESU",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\": \"1\",\r\n    \"price\": \"100\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/quotation/update/10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quotation",
+								"update",
+								"10"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Customer All Quotations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImhhcmlzQGcuY29tIiwiZXhwIjoxNjE0MTQ1NzU4LCJlbWFpbCI6ImhhcmlzQGcuY29tIn0.uuAoC0AfyZ3zBgs6nN0fhgW2spp0h9gGZgUQj8pH4ko",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/quotation/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quotation",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vendor All Quotations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJ1c2VybmFtZSI6ImhhcmlzQGcuY29tIiwiZXhwIjoxNjE0MTQ1NzU4LCJlbWFpbCI6ImhhcmlzQGcuY29tIn0.uuAoC0AfyZ3zBgs6nN0fhgW2spp0h9gGZgUQj8pH4ko",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/quotation/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"quotation",
+								"all"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reservation",
+			"item": [
+				{
+					"name": "All Reservations",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjE0MTc3ODUyLCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.8k5dvMuC9GuT2jSOKxmj8aWobQbQYEoVf_jKi-aXhdw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/reservation/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservation",
+								"all"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create Reservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo0LCJ1c2VybmFtZSI6ImRpcHRvM0BnLmNvbSIsImV4cCI6MTYxMzAyMjk0NSwiZW1haWwiOiJkaXB0bzNAZy5jb20ifQ.Ast_PaBa0pOyqv_ptb0Ono6nc0BoqRxGsc1NxQvczog",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"total_amount\": 600,\r\n    \"is_approved\": true,\r\n    \"reservation_date\": \"2021-03-12\",\r\n    \"reservation_start_time\": \"15:30\",\r\n    \"reservation_end_time\": \"17:50\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/reservation/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservation",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Reservation",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJ1c2VybmFtZSI6ImRpcHRvQGcuY29tIiwiZXhwIjoxNjE0MTc3ODI1LCJlbWFpbCI6ImRpcHRvQGcuY29tIn0.jowUuvdIJsUgRfgcAx0cAzhAkfFU4fcnDnmIwSc6kQY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"is_approved\": true,\r\n    \"finish_reservatioin\": false\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/reservation/update/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"reservation",
+								"update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Review and Rating",
+			"item": [
+				{
+					"name": "Create Review and Rating",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6ImhhcmlzQGcuY29tIiwiZXhwIjoxNjEzMTA4NzM4LCJlbWFpbCI6ImhhcmlzQGcuY29tIn0.syiZHbam4AkD_HcKDERR0BhXPWR_66-Ekp2yz5Kn8Lc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": \"3\",\r\n    \"title\": \"A pretty service\",\r\n    \"text\": \"It was a pretty cool service with some flaws!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/vendor/review/create/1/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendor",
+								"review",
+								"create",
+								"1",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Review and Rating",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3LCJ1c2VybmFtZSI6ImhhcmlzQGcuY29tIiwiZXhwIjoxNjEzMTA4NzM4LCJlbWFpbCI6ImhhcmlzQGcuY29tIn0.syiZHbam4AkD_HcKDERR0BhXPWR_66-Ekp2yz5Kn8Lc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 3,\r\n    \"title\": \"Good service\",\r\n    \"text\": \"ok ok it was a good service\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/vendor/review/update/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendor",
+								"review",
+								"update",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Vendor Ratings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/vendor/rating/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"vendor",
+								"rating",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
